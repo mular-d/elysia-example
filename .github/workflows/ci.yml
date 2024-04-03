@@ -43,3 +43,7 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: targerian/elysia-example:latest
+
+      - name: Send webook
+        run: |
+          curl --request GET '${{ secrets.WEBHOOK_URL }}' --header 'Authorization: Bearer ${{ secrets.WEBHOOK_TOKEN }}'
