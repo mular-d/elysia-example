@@ -1,15 +1,31 @@
 {
-  "name": "app",
+  "name": "elysia example",
   "version": "1.0.50",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --watch src/index.ts"
+    "dev": "bun run --watch src/index.ts",
+    "start": "bun run build && bun src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "db:generate": "drizzle-kit generate:pg",
+    "db:migrate": "tsx src/db/migrate.ts",
+    "db:drop": "drizzle-kit drop",
+    "db:pull": "drizzle-kit introspect:pg",
+    "db:studio": "drizzle-kit studio",
+    "db:check": "drizzle-kit check:pg"
   },
   "dependencies": {
-    "elysia": "latest"
+    "@elysiajs/swagger": "^1.0.3",
+    "@paralleldrive/cuid2": "^2.2.2",
+    "drizzle-orm": "^0.30.6",
+    "drizzle-typebox": "^0.1.1",
+    "elysia": "latest",
+    "postgres": "^3.4.4",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
-    "bun-types": "latest"
+    "bun-types": "latest",
+    "drizzle-kit": "^0.20.14",
+    "pg": "^8.11.3",
+    "tsx": "^3.14.0"
   },
   "module": "src/index.js"
 }
