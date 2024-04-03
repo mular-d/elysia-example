@@ -6,7 +6,7 @@
     "start": "bun run build && bun src/index.ts",
     "typecheck": "tsc --noEmit",
     "db:generate": "drizzle-kit generate:pg",
-    "db:migrate": "tsx src/db/migrate.ts",
+    "db:migrate": "tsx src/lib/migrate.ts",
     "db:drop": "drizzle-kit drop",
     "db:pull": "drizzle-kit introspect:pg",
     "db:studio": "drizzle-kit studio",
